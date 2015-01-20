@@ -49,3 +49,14 @@ h1 {
 .col-xs-3 {
 	width: 25%;
 }
+
+.button {
+    padding: 6px 12px;
+    background-color: #66CCFF;
+    font-size: 14px;
+    line-height: 1.428571429;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

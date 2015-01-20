@@ -17,3 +17,18 @@ feature "visiting home page" do
 		expect(page).to have_xpath("//a/img[@alt='Devops' and @src = '/assets/devops.jpg']")
 	end
 end
+
+feature "visiting questions page" do
+    before(:each) { visit "/" }
+    
+    scenario "User should see the title in questions page" do
+    	click_link "ruby_redirction"
+        expect(page).to have_text("Ruby Questions")
+    end
+
+    scenario "User should see the ask question button" do
+    	click_link "ruby_redirction"
+        expect(page).to have_button("Ask Question")
+    end
+
+end

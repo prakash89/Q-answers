@@ -21,13 +21,63 @@ end
 feature "visiting questions page" do
     before(:each) { visit "/" }
     
-    scenario "User should see the title in questions page" do
-    	click_link "ruby_redirction"
+    scenario "User should see the title in ruby questions page" do
+    	click_link "ruby_redirection"
         expect(page).to have_text("Ruby Questions")
     end
 
-    scenario "User should see the ask question button" do
-    	click_link "ruby_redirction"
+    scenario "User should see the ask question button in ruby questions page" do
+    	click_link "ruby_redirection"
+        expect(page).to have_button("Ask Question")
+    end
+
+    scenario "User should see the title in rails questions page" do
+    	click_link "rails_redirection"
+        expect(page).to have_text("Rails Questions")
+    end
+
+    scenario "User should see the ask question button in rails questions page" do
+    	click_link "rails_redirection"
+        expect(page).to have_button("Ask Question")
+    end
+
+    scenario "User should see the title in html questions page" do
+    	click_link "html_redirection"
+        expect(page).to have_text("Html and Css Questions")
+    end
+
+    scenario "User should see the ask question button in html questions page" do
+    	click_link "html_redirection"
+        expect(page).to have_button("Ask Question")
+    end
+
+    scenario "User should see the title in jquery questions page" do
+    	click_link "jquery_redirection"
+        expect(page).to have_text("Javascript and Jquery Questions")
+    end
+
+    scenario "User should see the ask question button in jquery questions page" do
+    	click_link "jquery_redirection"
+        expect(page).to have_button("Ask Question")
+    end
+
+    scenario "User should see the title in devops questions page" do
+    	click_link "devops_redirection"
+        expect(page).to have_text("Devops Questions")
+    end
+
+    scenario "User should see the ask question button in devops questions page" do
+    	click_link "devops_redirection"
+        expect(page).to have_button("Ask Question")
+    end
+
+    scenario "User should see the title in testing questions page" do
+    	click_link "testing_redirection"
+        expect(page).to have_text("Testing Questions")
+    end
+
+    scenario "User should see the ask question button in testing questions page" do
+    	click_link "testing_redirection"
         expect(page).to have_button("Ask Question")
     end
 

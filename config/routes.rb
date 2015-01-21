@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   get 'subjects/index'
   root :to => 'subjects#index'
 
-  resources :questions
+  # resources :questions
+
+  get "questions/ruby"
+  get "questions/rails"
+  get "questions/html_css"
+  get "questions/devops"
+  get "questions/jquery"
+  get "questions/testing"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,19 +1,7 @@
 class QuestionsController < ApplicationController
-  def ruby
+
+  def index
+    @catagory = params[:catagory]
   end
 
-  def rails
-  end
-
-  def html_css
-  end
-
-  def jquery
-  end
-
-  def devops
-  end
-
-  def testing
-  end
 end

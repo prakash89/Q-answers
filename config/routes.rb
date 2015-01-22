@@ -5,12 +5,7 @@ Rails.application.routes.draw do
 
   # resources :questions
 
-  get "questions/ruby"
-  get "questions/rails"
-  get "questions/html_css"
-  get "questions/devops"
-  get "questions/jquery"
-  get "questions/testing"
+  get 'questions/:catagory' => 'questions#index', :as => :questions_index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

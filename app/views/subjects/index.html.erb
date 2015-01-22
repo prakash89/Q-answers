@@ -2,24 +2,24 @@
 	<h1>Welcome to Q&amp;A</h1>
 		<div class="col-xs-12">
 			<div class="col-xs-4 left-image-position">
-				<%= link_to image_tag("ruby.jpeg", :class => "image_border "), questions_ruby_path, :title => "ruby", id: "ruby_redirection" %>
+				<%= link_to image_tag("ruby.jpeg", :class => "image_border "), questions_index_path(:catagory => 'Ruby'), :title => "ruby", id: "ruby_redirection", :params => "ruby"%>
 			</div>
 			<div class="col-xs-4 right-image-position">
-				<%= link_to image_tag("rails.jpg", :class => "image_border"), questions_rails_path, :title => "rails", id: "rails_redirection" %>
+				<%= link_to image_tag("rails.jpg", :class => "image_border"), questions_index_path(:catagory => 'Rails'), :title => "rails", id: "rails_redirection" %>
 			</div>
 			<div class="col-xs-4 left-image-position">
-				<%= link_to image_tag("html_css.jpg", :class => "image_border"), questions_html_css_path, :title => "html and css", id: "html_redirection" %>
+				<%= link_to image_tag("html_css.jpg", :class => "image_border"), questions_index_path(:catagory => 'Html and Css'), :title => "html and css", id: "html_redirection" %>
 			</div>
 		</div>
 		<div class="col-xs-12">
 			<div class="col-xs-4 left-image-position padding-images">
-				<%= link_to image_tag("jquery.jpeg", :class => "image_border"), questions_jquery_path, :title => "javascript and jquery", id: "jquery_redirection" %>
+				<%= link_to image_tag("jquery.jpeg", :class => "image_border"), questions_index_path(:catagory => 'Javascript and Jquery'), :title => "javascript and jquery", id: "jquery_redirection" %>
 			</div>
 			<div class="col-xs-4 right-image-position padding-images">
-				<%= link_to image_tag("devops.jpg", :class => "image_border"), questions_devops_path, :title => "devops", id: "devops_redirection" %>
+				<%= link_to image_tag("devops.jpg", :class => "image_border"), questions_index_path(:catagory => 'Devops'), :title => "devops", id: "devops_redirection" %>
 			</div>
 			<div class="col-xs-4 right-image-position padding-images">
-				<%= link_to image_tag("testing.jpg", :class => "image_border"), questions_testing_path, :title => "testing", id: "testing_redirection" %>
+				<%= link_to image_tag("testing.jpg", :class => "image_border"), questions_index_path(:catagory => 'Testing'), :title => "testing", id: "testing_redirection" %>
 			</div>
 		</div>
 </div>

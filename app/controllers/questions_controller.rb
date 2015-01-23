@@ -4,4 +4,8 @@ class QuestionsController < ApplicationController
     @catagory = params[:catagory]
   end
 
+  def new
+    @catagory = params[:catagory]
+  end
+
 end

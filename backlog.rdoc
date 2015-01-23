@@ -1,3 +1,12 @@
+feature : visiting create question page
+    
+    scenario : user should see title and discription text fields in create questions page
+        Given i am in ruby questions page
+        When i follow link 'Ask Questions'
+        Then I should be on the create questions page 
+        And I can see 'title' field
+        And I can see 'discription' field
+
 feature : create questions in create questions page
 
    scenario : User should create a question
@@ -8,4 +17,5 @@ feature : create questions in create questions page
         And I fill in "description"
         And I press "Post your Question" button
         Then I should be on the ruby questions page
+        And I can see title of question in ruby questions page
 

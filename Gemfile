@@ -32,6 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+group :production do
+  gem 'pg', '~> 0.18.1' 
+end
+
 group :development, :test do
   # Rspec!
   gem 'rspec-rails'

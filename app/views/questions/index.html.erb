@@ -1,4 +1,5 @@
 <div class="container">
-<h1><%= @catagory %> Questions</h1>
-<button class="button" >Ask Question</button>
+<h1><%= @catagory.titleize %> Questions</h1>
+<%= button_to "Ask Question", questions_new_path(@catagory), :class => "button ask-questions-position", method: "get"%>
+<%= button_to "Back", root_path, :class => "button back-button-position", method: "get" %>
 </div>

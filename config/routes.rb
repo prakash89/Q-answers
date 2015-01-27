@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   get 'subjects/index'
   root :to => 'subjects#index'
 
-  # resources :questions
-
   get 'questions/:catagory' => 'questions#index', :as => :questions_index
   get 'questions/:catagory/new' => 'questions#new', :as => :questions_new
+  post 'questions/:catagory/create' => 'questions#create', :as => :questions_create
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def index
     @catagory = params[:catagory]
+    @questions = Question.all
   end
 
   def new

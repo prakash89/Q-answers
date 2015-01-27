@@ -63,4 +63,15 @@ feature "Check fields in create questions page" do
      end
 end
 
+feature "Check title in question index page" do 
+
+  scenario "user should see title of question in question index page" do
+    visit "/questions/:catagory/new"
+    fill_in "Title", :with => "some text"
+    fill_in "Description", :with => "some more text"
+    click_button "Post Your Question"
+    expect(page).to have_text("some text")
+  end
+end
+
 end

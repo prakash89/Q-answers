@@ -1,4 +1,21 @@
 <div class="container">
-<h1>Ask Questions Here</h1>
-<%= button_to "Back", questions_index_path(@catagory), :class => "button back-button-position", method: "get" %>
+	<h1>Ask Questions Here</h1>
+	<div>
+		<%= button_to "Back", questions_index_path(@catagory), :class => "button back-button-position", method: "get" %>
+	</div>
+	<div class="form-padding">
+		<%= form_for @question, url: questions_create_path(@catagory) do |q| %>
+		<div>
+			<%= q.label :title %><br>
+			<%= q.text_field :title, class: "text-field-dimenstions" %>
+		</div>
+		<div class="padding-btwn-fileds">
+			<%= q.label :description %><br>
+			<%= q.text_area :description, :rows => 20, :cols => 120%>
+		</div>
+		<div class="padding-btwn-fileds">
+		<%= q.submit "Post Your Question", class: "button" %>
+		</div>
+		<% end %>
+	</div>
 </div>

@@ -82,3 +82,19 @@ h1 {
 .padding-btwn-fileds {
 	padding-top: 20px;
 }
+
+.questions-style {
+	color: #0c65a5;
+}
+
+.description-style {
+	overflow: hidden;
+	margin-right: 30px;
+	padding-right: 20px;
+	height:17px;
+	font-size: 14px;
+}
+
+.questions-devider {
+    border-bottom: 1px solid #cccccc; margin: 20px -20px;
+}

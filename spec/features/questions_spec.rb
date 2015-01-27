@@ -13,39 +13,54 @@ end
 feature "visiting back to questions page" do
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Ruby/new"
+       visit "/questions/ruby/new"
        click_button "Back"
        expect(page).to have_text("Ruby Questions")
     end
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Rails/new"
+       visit "/questions/rails/new"
        click_button "Back"
        expect(page).to have_text("Rails Questions")
     end
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Html&Css/new"
+       visit "/questions/html&css/new"
        click_button "Back"
        expect(page).to have_text("Html&Css Questions")
     end
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Javascript&Jquery/new"
+       visit "/questions/javascript&jquery/new"
        click_button "Back"
        expect(page).to have_text("Javascript&Jquery Questions")
     end
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Devops/new"
+       visit "/questions/devops/new"
        click_button "Back"
        expect(page).to have_text("Devops Questions")
     end
 
     scenario "user should see 'back' link in create questions page" do
-       visit "/questions/Testing/new"
+       visit "/questions/testing/new"
        click_button "Back"
        expect(page).to have_text("Testing Questions")
     end
+
+feature "Check fields in create questions page" do
+     scenario "user should see 'title' and 'discription' text fields in create questions page" do
+        visit "/questions/:catagory"
+        click_button "Ask Question"
+        expect(page).to have_text("Title")
+        expect(page).to have_text("Description")
+     end
+
+     scenario "user should see 'Post Your Question' button in create questions page" do
+        visit "/questions/:catagory"
+        click_button "Ask Question"
+        expect(page).to have_button("Post Your Question")
+     end
+end
 
 end

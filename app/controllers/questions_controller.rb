@@ -14,8 +14,11 @@ class QuestionsController < ApplicationController
   	@catagory = params[:catagory]
   	@question = Question.new(questions_params)
   	@question.category = @catagory
-  	@question.save
+  	if @question.valid? && @question.save
   	redirect_to questions_index_path
+  else
+  	render 'new'
+  end
   end
 
   private

@@ -8,10 +8,12 @@
 		<div>
 			<%= q.label :title %><br>
 			<%= q.text_field :title, class: "text-field-dimenstions" %>
+			<%= custom_error_message(q.object, :title) %>
 		</div>
 		<div class="padding-btwn-fileds">
 			<%= q.label :description %><br>
 			<%= q.text_area :description, :rows => 20, :cols => 120%>
+			<%= custom_error_message(q.object, :description) %>
 		</div>
 		<div class="padding-btwn-fileds">
 		<%= q.submit "Post Your Question", class: "button" %>

@@ -11,7 +11,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
+  	@catagory = params[:catagory]
   	@question = Question.new(questions_params)
+  	@question.category = @catagory
   	@question.save
   	redirect_to questions_index_path
   end

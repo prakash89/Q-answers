@@ -11,7 +11,7 @@ RSpec.describe QuestionsController, :type => :controller do
 
   describe "POST create" do
   	it "user should create questions" do
-  		post :create, question: {title: 'some text', description: 'some more text'}
+  		post :create, catagory: "ruby", question: {title: 'some text', description: 'some more text'}
   		expect(Question.count).to  eq(1)
   	end
   end

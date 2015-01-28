@@ -43,6 +43,8 @@ group :development, :test do
   gem 'capybara'
   gem 'sqlite3'
 
+  gem 'factory_girl_rails'
+
   gem 'pry-rails', '~> 0.3.2'
 
   gem 'rb-readline'

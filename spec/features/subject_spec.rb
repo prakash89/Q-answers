@@ -84,13 +84,13 @@ end
 feature "Go back to the home page" do
    
    scenario "user should see text 'Welcome to Q&A' when come back fron questions page" do
-      visit "questions/:catagory"
+      visit "questions/:category"
       click_button "Back"
       expect(page).to have_text("Welcome to Q&A")
   end
 end
 
-# feature "Titalize the catagory" do
+# feature "Titalize the category" do
 
 #     scenario "user should see text 'Ruby Questions' when follow ruby image link" do
 #         visit "/"

@@ -1,19 +1,19 @@
 class QuestionsController < ApplicationController
 
   def index
-    @catagory = params[:catagory]
+    @category = params[:category]
     @questions = Question.all.reverse
   end
 
   def new
-    @catagory = params[:catagory]
+    @category = params[:category]
     @question = Question.new
   end
 
   def create
-  	@catagory = params[:catagory]
+  	@category = params[:category]
   	@question = Question.new(questions_params)
-  	@question.category = @catagory
+  	@question.category = @category
   	if @question.valid? && @question.save
   	redirect_to questions_index_path
   else

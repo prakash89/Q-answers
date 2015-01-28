@@ -1,10 +1,10 @@
 <div class="container">
 	<h1>Ask Questions Here</h1>
 	<div>
-		<%= button_to "Back", questions_index_path(@catagory), :class => "button back-button-position", method: "get" %>
+		<%= button_to "Back", questions_index_path(@category), :class => "button back-button-position", method: "get" %>
 	</div>
 	<div class="form-padding">
-		<%= form_for @question, url: questions_create_path(@catagory) do |q| %>
+		<%= form_for @question, url: questions_create_path(@category) do |q| %>
 		<div>
 			<%= q.label :title %><br>
 			<%= q.text_field :title, class: "text-field-dimenstions" %>

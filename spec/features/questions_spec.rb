@@ -4,7 +4,7 @@ require_relative '../rails_helper'
 feature "visiting create questions page" do
     
     scenario "user should see 'ask questions here' text in create questions page" do
-       visit "/questions/:catagory"
+       visit "/questions/:category"
        click_button "Ask Question"
        expect(page).to have_text("Ask Questions Here")
     end
@@ -50,23 +50,23 @@ feature "visiting back to questions page" do
 
 feature "Check fields in create questions page" do
      scenario "user should see 'title' and 'discription' text fields in create questions page" do
-        visit "/questions/:catagory"
+        visit "/questions/:category"
         click_button "Ask Question"
         expect(page).to have_text("Title")
         expect(page).to have_text("Description")
      end
 
      scenario "user should see 'Post Your Question' button in create questions page" do
-        visit "/questions/:catagory"
+        visit "/questions/:category"
         click_button "Ask Question"
         expect(page).to have_button("Post Your Question")
      end
 end
 
-feature "Check title in question index page" do 
+feature "create question in create question page" do 
 
-  scenario "user should see title of question in question index page" do
-    visit "/questions/:catagory/new"
+  scenario "user should create question in create question page" do
+    visit "/questions/:category/new"
     fill_in "Title", :with => "some text"
     fill_in "Description", :with => "some more text"
     click_button "Post Your Question"

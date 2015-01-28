@@ -89,12 +89,3 @@ feature "Go back to the home page" do
       expect(page).to have_text("Welcome to Q&A")
   end
 end
-
-# feature "Titalize the category" do
-
-#     scenario "user should see text 'Ruby Questions' when follow ruby image link" do
-#         visit "/"
-#         click_link "ruby_redirection", href: '/questions/ruby'
-#         expect(page).to have_text("Ruby Questions")
-#     end
-# end

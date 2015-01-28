@@ -8,7 +8,7 @@
 		<% @questions.each do |question| %>
 		<div>
 			<% if question.category == @category %>
-			<h4 class="questions-style"><%= question.title %></h4>
+			<a href="<%= questions_show_path(question.category,question) %>"><h4 class="questions-style"><%= question.title %></h4></a>
 			<div class="description-style"><%= question.description %></div>
 			<div class="questions-devider"></div>
 			<% end %>

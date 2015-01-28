@@ -21,6 +21,11 @@ class QuestionsController < ApplicationController
   end
   end
 
+  def show
+  	@category = params[:category]
+  	@question = Question.find(params[:id])
+  end
+
   private
 
   def questions_params

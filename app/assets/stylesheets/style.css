@@ -105,3 +105,17 @@ h1 {
     margin-bottom: 10px;
     color: #737373;
 }
+
+.show-header {
+   font-size: 24px;
+   line-height: 1.35;
+   font-weight: normal;
+   margin-bottom: .5em;
+}
+
+.show-description {
+   font-size: 14px;
+   line-height: 1.75;
+   font-weight: normal;
+   margin-right: 250px;
+}

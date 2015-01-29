@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'questions/:category/:id' => 'questions#show', :as => :questions_show
   get 'questions/:category/:id/edit' => 'questions#edit', :as => :questions_edit
   put 'questions/:category/:id' => 'questions#update', :as => :questions_update
+
+  get 'answers/:category/new' => 'answers#new', :as => :answers_new
+  post 'answers/:category/create' => 'answers#create', :as => :answers_create
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

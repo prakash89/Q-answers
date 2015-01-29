@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>Post Answer Here</h1>
+	<%= form_for @answer, url: answers_create_path(@category, question_id: @question_id) do |a| %>
+	    <div class="padding-btwn-fileds">
+		    <%= a.label :my_answer %><br>
+		    <%= a.text_area :my_answer, :rows => 20, :cols => 120%>
+		    <%#= custom_error_message(q.object, :description) %>
+	    </div>
+	    <div class="padding-btwn-fileds">
+		    <%= a.submit "Post Your Answer", class: "button" %>
+	    </div>
+	<% end %>
+</div>

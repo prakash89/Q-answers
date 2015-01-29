@@ -1,21 +1,20 @@
-feature : visiting create question page
+feature : visiting answer page for related question
     
-    scenario : user should see title and discription text fields in create questions page
-        Given i am in ruby questions page
-        When i follow link 'Ask Questions'
-        Then I should be on the create questions page 
-        And I can see 'title' field
-        And I can see 'discription' field
+    scenario : user should view answer page for related question
+        Given i am in ruby show questions page
+        When i follow link 'Answer'
+        Then I should be on the create answer page 
+        And I can see 'Answer' field
 
-feature : create questions in create questions page
 
-   scenario : User should create a question
-        Given i am in ruby questions page
-        When i follow link 'Ask Questions'
-        Then I should be on the create questions page 
-        When I fill in "title"
-        And I fill in "description"
-        And I press "Post your Question" button
-        Then I should be on the ruby questions page
-        And I can see title of question in ruby questions page
+feature : create answer in create answer page
+
+   scenario : User should create a answer for related question
+        Given i am in ruby show questions page
+        When i follow link 'Answer'
+        Then I should be on the create answer page 
+        And I fill in "Answer"
+        And I press "Post your Answer" button
+        Then I should be on the ruby show questions page
+        And I can see answer of that question in ruby show questions page
 

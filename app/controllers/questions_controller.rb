@@ -24,6 +24,7 @@ class QuestionsController < ApplicationController
   def show
   	@category = params[:category]
   	@question = Question.find(params[:id])
+    @answers = Answer.where("question_id = ?", @question.id)
   end
 
   def edit

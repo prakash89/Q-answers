@@ -2,4 +2,5 @@
 <h4 class="show-header"><%= @question.title %></h4>
 <div class="questions-devider"></div>
 <div class="show-description"><%= @question.description %></div>
+<%= link_to "edit", questions_edit_path(@category, @question), class: "button" %>
 </div>

@@ -26,6 +26,21 @@ class QuestionsController < ApplicationController
   	@question = Question.find(params[:id])
   end
 
+  def edit
+    @category = params[:category]
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @category = params[:category]
+    @question = Question.find(params[:id])
+    if @question.update(questions_params)
+      redirect_to questions_index_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def questions_params

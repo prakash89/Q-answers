@@ -25,4 +25,18 @@ RSpec.describe QuestionsController, :type => :controller do
     end
   end
 
+  describe "GET edit" do
+    it "user should edit the question" do
+      get :edit, category: "ruby", id: ruby.id
+      expect(assigns[:question]).to eq(ruby)
+    end
+  end
+
+  describe "PUT update" do
+    it "user should update the question" do
+      put :update, category: "ruby", id: ruby.id, question: {title: 'some text', description: 'some more text'}
+      expect(assigns[:question]).to eq(ruby)
+    end
+  end
+
 end

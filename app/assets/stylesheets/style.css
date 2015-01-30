@@ -123,4 +123,6 @@ h1 {
 
 .show-answer-position {
 	margin-bottom: 30px;
+	line-height: 1.75;
+	font-size: 14px;
 }

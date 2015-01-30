@@ -2,24 +2,24 @@
 	<h1>Welcome to Q&amp;A</h1>
 		<div class="col-xs-12">
 			<div class="col-xs-4 left-image-position">
-				<%= link_to image_tag("ruby.jpeg", :class => "image_border "), questions_index_path(:category => 'ruby'), :title => "ruby", id: "ruby_redirection", :params => "ruby"%>
+				<%= link_to image_tag("ruby.jpeg", class: "image_border "), questions_index_path(category: 'ruby'), title: "ruby", id: "ruby_redirection", params: "ruby"%>
 			</div>
 			<div class="col-xs-4 right-image-position">
-				<%= link_to image_tag("rails.jpg", :class => "image_border"), questions_index_path(:category => 'rails'), :title => "rails", id: "rails_redirection" %>
+				<%= link_to image_tag("rails.jpg", class: "image_border"), questions_index_path(category: 'rails'), title: "rails", id: "rails_redirection" %>
 			</div>
 			<div class="col-xs-4 left-image-position">
-				<%= link_to image_tag("html_css.jpg", :class => "image_border"), questions_index_path(:category => 'html&css'), :title => "html and css", id: "html_redirection" %>
+				<%= link_to image_tag("html_css.jpg", class: "image_border"), questions_index_path(category: 'html&css'), title: "html and css", id: "html_redirection" %>
 			</div>
 		</div>
 		<div class="col-xs-12">
 			<div class="col-xs-4 left-image-position padding-images">
-				<%= link_to image_tag("jquery.jpeg", :class => "image_border"), questions_index_path(:category => 'javascript&jquery'), :title => "javascript and jquery", id: "jquery_redirection" %>
+				<%= link_to image_tag("jquery.jpeg", class: "image_border"), questions_index_path(category: 'javascript&jquery'), title: "javascript and jquery", id: "jquery_redirection" %>
 			</div>
 			<div class="col-xs-4 right-image-position padding-images">
-				<%= link_to image_tag("devops.jpg", :class => "image_border"), questions_index_path(:category => 'devops'), :title => "devops", id: "devops_redirection" %>
+				<%= link_to image_tag("devops.jpg", class: "image_border"), questions_index_path(category: 'devops'), title: "devops", id: "devops_redirection" %>
 			</div>
 			<div class="col-xs-4 right-image-position padding-images">
-				<%= link_to image_tag("testing.jpg", :class => "image_border"), questions_index_path(:category => 'testing'), :title => "testing", id: "testing_redirection" %>
+				<%= link_to image_tag("testing.jpg", class: "image_border"), questions_index_path(category: 'testing'), title: "testing", id: "testing_redirection" %>
 			</div>
 		</div>
 </div>

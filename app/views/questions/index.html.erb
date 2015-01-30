@@ -1,8 +1,8 @@
 <div class="container">
 	<h1><%= @category.titleize %> Questions</h1>
 	<div>
-		<%= button_to "Ask Question", questions_new_path(@category), :class => "button ask-questions-position", method: "get"%>
-		<%= button_to "Back", root_path, :class => "button back-button-position", method: "get" %>
+		<%= button_to "Ask Question", questions_new_path(@category), class: "button ask-questions-position", method: "get"%>
+		<%= button_to "Back", root_path, class: "button back-button-position", method: "get" %>
 	</div>
 	<div class="form-padding">
 		<% @questions.each do |question| %>

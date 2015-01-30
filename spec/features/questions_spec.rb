@@ -47,6 +47,7 @@ feature "visiting back to questions page" do
        click_button "Back"
        expect(page).to have_text("Testing Questions")
     end
+  end
 
 feature "Check fields in create questions page" do
      scenario "user should see 'title' and 'discription' text fields in create questions page" do
@@ -65,13 +66,41 @@ end
 
 feature "create question in create question page" do 
 
+  let(:rubyq) {FactoryGirl.create(:question, category: "ruby")}
+
   scenario "user should create question in create question page" do
-    visit "/questions/:category/new"
+    rubyq
+    visit "/questions/:category"
+    click_button "Ask Question"
+    expect(page).to have_text("Ask Questions Here")
     fill_in "Title", :with => "some text"
     fill_in "Description", :with => "some more text"
     click_button "Post Your Question"
     expect(page).to have_text("some text")
   end
+
+  scenario "user should edit question in edit question page" do
+    rubyq
+    visit "/questions/ruby"
+    click_link "some text"
+    expect(page).to have_link("Edit Question")
+    click_link("Edit Question")
+    expect(page).to have_text("Title")
+    expect(page).to have_text("Description")
+    fill_in "Title", :with => "some one text"
+    fill_in "Description", :with => "some one more text"
+    click_button "Update Your Question"
+    expect(page).to have_text("some one text")
+  end
+
+  scenario "user should view question in view question page" do
+    rubyq
+    visit "/questions/ruby"
+    click_link "some text"
+    expect(page).to have_link("Edit Question")
+    expect(page).to have_text("some text")
+    expect(page).to have_text("some more text")
+    expect(page).to have_link("Share Your Answer")
+  end
 end
 
-end

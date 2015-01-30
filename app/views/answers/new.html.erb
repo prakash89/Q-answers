@@ -4,7 +4,7 @@
 	    <div class="padding-btwn-fileds">
 		    <%= a.label :my_answer %><br>
 		    <%= a.text_area :my_answer, :rows => 20, :cols => 120%>
-		    <%#= custom_error_message(q.object, :description) %>
+		    <%= custom_error_message(a.object, :my_answer) %>
 	    </div>
 	    <div class="padding-btwn-fileds">
 		    <%= a.submit "Post Your Answer", class: "button" %>

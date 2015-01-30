@@ -1,8 +1,8 @@
 module QuestionsHelper
 
-	def custom_error_message(questions, field)
-    if questions.present? && questions.errors.messages[field].present?
-      content_tag :span, "#{questions.errors.messages[field][0]}",
+	def custom_error_message(resource, field)
+    if resource.present? && resource.errors.messages[field].present?
+      content_tag :span, "#{resource.errors.messages[field][0]}",
         :class => 'help-block', :style => "color:#B94A48"
     else
       ''

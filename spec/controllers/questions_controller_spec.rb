@@ -8,7 +8,7 @@ RSpec.describe QuestionsController, :type => :controller do
   #     expect(response).to have_http_status(:success)
   #   end
   # end
-  let(:ruby) {FactoryGirl.create(:question)}
+  let(:question) {FactoryGirl.create(:question)}
 
   describe "POST create" do
     it "user should create questions" do
@@ -20,22 +20,22 @@ RSpec.describe QuestionsController, :type => :controller do
 
   describe "GET show" do
     it "user should view the question" do
-      get :show, category: "ruby", id: ruby.id
-      expect(assigns[:question]).to eq(ruby)
+      get :show, category: "ruby", id: question.id
+      expect(assigns[:question]).to eq(question)
     end
   end
 
   describe "GET edit" do
     it "user should edit the question" do
-      get :edit, category: "ruby", id: ruby.id
-      expect(assigns[:question]).to eq(ruby)
+      get :edit, category: "ruby", id: question.id
+      expect(assigns[:question]).to eq(question)
     end
   end
 
   describe "PUT update" do
     it "user should update the question" do
-      put :update, category: "ruby", id: ruby.id, question: {title: 'some text', description: 'some more text'}
-      expect(assigns[:question]).to eq(ruby)
+      put :update, category: "ruby", id: question.id, question: {title: 'some text', description: 'some more text'}
+      expect(assigns[:question]).to eq(question)
     end
   end
 

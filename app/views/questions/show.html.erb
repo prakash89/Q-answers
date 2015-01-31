@@ -3,11 +3,11 @@
 	<div class="show-description"><%= @question.description %></div>
 	    <%= link_to "Edit Question", questions_edit_path(@category, @question), class: "button" %>
 	<div class="questions-devider"></div>
-	<% @answers.each do |answer| %>
+	<% @question.answers.each do |answer| %>
 	    <% if answer.category == @category %>
 	        <div class="show-answer-position">A:- <%= answer.my_answer %></div>
 	        <div class="questions-devider"></div>
 	    <% end %>
 	<% end %>
-	<%= link_to "Share Your Answer", answers_new_path(@category, @question, question_id: @question.id), class: "button" %>
+	<%= link_to "Share Your Answer", answers_new_path(@category, question_id: @question.id), class: "button" %>
 </div>

@@ -49,27 +49,12 @@ feature "visiting back to questions page" do
     end
   end
 
-feature "Check fields in create questions page" do
-     scenario "user should see 'title' and 'discription' text fields in create questions page" do
-        visit "/questions/:category"
-        click_button "Ask Question"
-        expect(page).to have_text("Title")
-        expect(page).to have_text("Description")
-     end
-
-     scenario "user should see 'Post Your Question' button in create questions page" do
-        visit "/questions/:category"
-        click_button "Ask Question"
-        expect(page).to have_button("Post Your Question")
-     end
-end
-
 feature "create question in create question page" do 
 
-  let(:rubyq) {FactoryGirl.create(:question, category: "ruby")}
+  let(:question) {FactoryGirl.create(:question, category: "ruby")}
 
   scenario "user should create question in create question page" do
-    rubyq
+    question
     visit "/questions/:category"
     click_button "Ask Question"
     expect(page).to have_text("Ask Questions Here")
@@ -80,7 +65,7 @@ feature "create question in create question page" do
   end
 
   scenario "user should edit question in edit question page" do
-    rubyq
+    question
     visit "/questions/ruby"
     click_link "some text"
     expect(page).to have_link("Edit Question")
@@ -94,7 +79,7 @@ feature "create question in create question page" do
   end
 
   scenario "user should view question in view question page" do
-    rubyq
+    question
     visit "/questions/ruby"
     click_link "some text"
     expect(page).to have_link("Edit Question")

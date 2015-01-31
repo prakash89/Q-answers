@@ -13,39 +13,38 @@ class QuestionsController < ApplicationController
   def create
   	@question = Question.new(questions_params)
   	@question.category = @category
-  	if @question.valid? && @question.save
-  	redirect_to questions_index_path
+  	if @question.save
+     redirect_to questions_index_path
+   else
+     render 'new'
+   end
+ end
+
+ def show
+   @question = Question.find(params[:id])
+ end
+
+ def edit
+  @question = Question.find(params[:id])
+end
+
+def update
+  @question = Question.find(params[:id])
+  if @question.update(questions_params)
+    redirect_to questions_show_path(@category, @question.id)
   else
-  	render 'new'
+    render 'edit'
   end
-  end
+end
 
-  def show
-  	@question = Question.find(params[:id])
-    @answers = Answer.where("question_id = ?", @question.id)
-  end
+private
 
-  def edit
-    @question = Question.find(params[:id])
-  end
+def category_params
+  @category = params[:category]
+end
 
-  def update
-    @question = Question.find(params[:id])
-    if @question.update(questions_params)
-      redirect_to questions_index_path
-    else
-      render 'edit'
-    end
-  end
-
-  def category_params
-    @category = params[:category]
-  end
-
-  private
-
-  def questions_params
-  	params.require(:question).permit(:title, :description)
-  end
+def questions_params
+ params.require(:question).permit(:title, :description)
+end
 
 end

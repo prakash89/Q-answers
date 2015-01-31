@@ -1,6 +1,10 @@
 <div class="container">
 	<h1>Post Answer Here</h1>
-	<%= form_for @answer, url: answers_create_path(@category, question_id: @question_id) do |a| %>
+	<%= form_for @answer, url: answers_create_path(@category, question_id: @question.id) do |a| %>
+	<% binding.pry %>
+	<h4 class="show-header">Q:- <%= @question.title %></h4>
+	<div class="show-description"><%= @question.description %></div>
+	<div class="questions-devider"></div>
 	    <div class="padding-btwn-fileds">
 		    <%= a.label :my_answer %><br>
 		    <%= a.text_area :my_answer, :rows => 20, :cols => 120%>

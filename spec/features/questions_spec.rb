@@ -3,55 +3,55 @@ require_relative '../rails_helper'
 
 feature "visiting create questions page" do
     
-    scenario "user should see 'ask questions here' text in create questions page" do
-       visit "/questions/:category"
-       click_button "Ask Question"
-       expect(page).to have_text("Ask Questions Here")
-    end
+  scenario "user should see 'ask questions here' text in create questions page" do
+    visit "/questions/:category"
+    click_button "Ask Question"
+    expect(page).to have_text("Ask Questions Here")
+  end
 end
 
 feature "visiting back to questions page" do
 
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/ruby/new"
-       click_button "Back"
-       expect(page).to have_text("Ruby Questions")
-    end
-
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/rails/new"
-       click_button "Back"
-       expect(page).to have_text("Rails Questions")
-    end
-
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/html&css/new"
-       click_button "Back"
-       expect(page).to have_text("Html&Css Questions")
-    end
-
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/javascript&jquery/new"
-       click_button "Back"
-       expect(page).to have_text("Javascript&Jquery Questions")
-    end
-
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/devops/new"
-       click_button "Back"
-       expect(page).to have_text("Devops Questions")
-    end
-
-    scenario "user should see 'back' link in create questions page" do
-       visit "/questions/testing/new"
-       click_button "Back"
-       expect(page).to have_text("Testing Questions")
-    end
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/ruby/new"
+    click_button "Back"
+    expect(page).to have_text("Ruby Questions")
   end
+
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/rails/new"
+    click_button "Back"
+    expect(page).to have_text("Rails Questions")
+  end
+
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/html&css/new"
+    click_button "Back"
+    expect(page).to have_text("Html&Css Questions")
+  end
+
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/javascript&jquery/new"
+    click_button "Back"
+    expect(page).to have_text("Javascript&Jquery Questions")
+  end
+
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/devops/new"
+    click_button "Back"
+    expect(page).to have_text("Devops Questions")
+  end
+
+  scenario "user should see 'back' link in create questions page" do
+    visit "/questions/testing/new"
+    click_button "Back"
+    expect(page).to have_text("Testing Questions")
+  end
+end
 
 feature "create question in create question page" do 
 
-  let(:question) {FactoryGirl.create(:question, category: "ruby")}
+let(:question) {FactoryGirl.create(:question, category: "ruby")}
 
   scenario "user should create question in create question page" do
     question

@@ -6,13 +6,13 @@
 	</div>
 	<div class="form-padding">
 		<% @questions.each do |question| %>
-		<div>
-			<% if question.category == @category %>
-			<a href="<%= questions_show_path(@category,question) %>" id="title_link"><h4 class="questions-style"><%= question.title %></h4></a>
-			<div class="description-style"><%= question.description %></div>
-			<div class="questions-devider"></div>
-			<% end %>
-		</div>
+		  <div>
+			  <% if question.category == @category %>
+			    <a href="<%= questions_show_path(@category,question) %>" id="title_link"><h4 class="questions-style"><%= question.title %></h4></a>
+			    <div class="description-style"><%= question.description %></div>
+			    <div class="questions-devider"></div>
+			  <% end %>
+		  </div>
 		<% end %>
 	</div>
 </div>

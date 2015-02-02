@@ -4,11 +4,14 @@ require_relative '../rails_helper'
 feature "visiting home page" do
 	before(:each) { visit "/" }
 
-	scenario "User should see the title" do 
-		expect(page).to have_text("Welcome to Q&A")
-	end
+  let(:user) {FactoryGirl.create(:user)}
+
+	# scenario "User should see the title" do 
+	# 	expect(page).to have_text("Welcome to Q&A")
+	# end
 
 	scenario "User should see the subject image links" do 
+    apllication_signin
 		expect(page).to have_xpath("//a/img[@alt='Ruby' and @src = '/assets/ruby.jpeg']")
 		expect(page).to have_xpath("//a/img[@alt='Rails' and @src = '/assets/rails.jpg']")
 		expect(page).to have_xpath("//a/img[@alt='Jquery' and @src = '/assets/jquery.jpeg']")
@@ -19,8 +22,9 @@ feature "visiting home page" do
 end
 
 feature "checking text in questions page" do
-  before(:each) { visit "/" }
-    
+  let(:user) {FactoryGirl.create(:user)}
+  before(:each) { apllication_signin } 
+   
   scenario "User should see the title in ruby questions page" do
     click_link "ruby_redirection", href: '/questions/ruby'
     expect(page).to have_text("Ruby Questions")
@@ -53,7 +57,8 @@ feature "checking text in questions page" do
 end
 
 feature "checking ask question link in question page" do
-  before(:each) { visit "/" }
+  let(:user) {FactoryGirl.create(:user)}
+  before(:each) { apllication_signin }
   after(:each) {expect(page).to have_button("Ask Question")}
 
   scenario "User should see the ask question link in ruby questions page" do
@@ -80,12 +85,14 @@ feature "checking ask question link in question page" do
     click_link "testing_redirection"
   end
 end
- 
-feature "Go back to the home page" do
 
-  scenario "user should see text 'Welcome to Q&A' when come back fron questions page" do
-    visit "questions/:category"
-    click_button "Back"
-    expect(page).to have_text("Welcome to Q&A")
-  end
+def apllication_signin
+  visit "/"
+  click_link "Log In"
+  expect(page).to have_text("Log in")
+  fill_in "user_email", :with => user.email
+  fill_in "user_password", :with => user.password
+  click_button "Log in"
+  expect(page).to have_text("Welcome to Q&A")
 end
+

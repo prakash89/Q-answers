@@ -2,13 +2,12 @@ require 'rails_helper'
 
 RSpec.describe QuestionsController, :type => :controller do
 
-  # describe "GET index" do
-  #   it "returns http success" do
-  #     get :index
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  let(:user) {FactoryGirl.create(:user)}
   let(:question) {FactoryGirl.create(:question)}
+
+  before(:each) do
+    sign_in(user)
+  end
 
   describe "POST create" do
     it "user should create questions" do
@@ -21,7 +20,7 @@ RSpec.describe QuestionsController, :type => :controller do
   describe "GET show" do
     it "user should view the question" do
       expect do
-        get :show, category: "ruby", id: question.id
+        get :show, category: "ruby", user_id: user.id, id: question.id
       end.to change(Question, :count).by(1)
     end
   end

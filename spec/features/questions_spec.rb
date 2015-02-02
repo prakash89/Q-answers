@@ -50,8 +50,9 @@ feature "visiting back to questions page" do
 end
 
 feature "create question in create question page" do 
-
+let(:user) {FactoryGirl.create(:user)}
 let(:question) {FactoryGirl.create(:question, category: "ruby")}
+before(:each) { apllication_signin }
 
   scenario "user should create question in create question page" do
     question

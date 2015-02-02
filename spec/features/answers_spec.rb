@@ -3,9 +3,11 @@ require_relative '../rails_helper'
 
 
 feature "Create answer in create answer page" do
-	
+
+let(:user) {FactoryGirl.create(:user)}	
 let(:answer) {FactoryGirl.create(:answer)}
 let(:question) {FactoryGirl.create(:question, category: "ruby")}
+before(:each) { apllication_signin }
 
 	scenario "user should create answer" do
 		question

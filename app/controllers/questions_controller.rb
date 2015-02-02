@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @user = User.find(@question.user_id)
+    @user = @question.user
   end
 
   def edit

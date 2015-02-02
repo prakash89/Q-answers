@@ -12,30 +12,33 @@ RSpec.describe QuestionsController, :type => :controller do
 
   describe "POST create" do
     it "user should create questions" do
-      post :create, category: "ruby", question: {title: 'some text', description: 'some more text'}
-  		expect(Question.count).to  eq(1)
-
+      expect do 
+        post :create, category: "ruby", question: {title: 'some text', description: 'some more text'}
+      end.to change(Question,:count).by(1)
     end
   end
 
   describe "GET show" do
     it "user should view the question" do
-      get :show, category: "ruby", id: question.id
-      expect(assigns[:question]).to eq(question)
+      expect do
+        get :show, category: "ruby", id: question.id
+      end.to change(Question, :count).by(1)
     end
   end
 
   describe "GET edit" do
     it "user should edit the question" do
-      get :edit, category: "ruby", id: question.id
-      expect(assigns[:question]).to eq(question)
+      expect do
+        get :edit, category: "ruby", id: question.id
+      end.to change(Question, :count).by(1)
     end
   end
 
   describe "PUT update" do
     it "user should update the question" do
-      put :update, category: "ruby", id: question.id, question: {title: 'some text', description: 'some more text'}
-      expect(assigns[:question]).to eq(question)
+      expect do
+        put :update, category: "ruby", id: question.id, question: {title: 'some text', description: 'some more text'}
+      end.to change(Question, :count).by(1)
     end
   end
 

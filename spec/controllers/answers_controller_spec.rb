@@ -7,7 +7,9 @@ let(:question) {FactoryGirl.create(:question)}
 
   describe "POST create" do
     it "user should create answer" do
-      post :create, category: "ruby", question_id: question.id, answer: {my_answer: "My Answer"}
+      expect do
+        post :create, category: "ruby", question_id: question.id, answer: {my_answer: "My Answer"}
+      end.to change(Answer, :count).by(1)
     end
   end
 

@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
   def create
   	@question = Question.new(questions_params)
   	@question.category = @category
+    @question.user_id = current_user.id
   	if @question.save
       redirect_to questions_index_path
     else
@@ -22,6 +23,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @user = User.find(@question.user_id)
   end
 
   def edit

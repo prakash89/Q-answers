@@ -1,11 +1,20 @@
 <div class="container">
 	<h4 class="show-header">Q:- <%= @question.title %></h4>
 	<div class="show-description"><%= @question.description %></div>
+	<div class="right-image-position">
+	  <%= @user.email %><br>
+	  <%= @question.created_at.strftime('%c') %>
+	</div>
 	<%= link_to "Edit Question", questions_edit_path(@category, @question), class: "button" %>
 	<div class="questions-devider"></div>
 	<% @question.answers.each do |answer| %>
 	  <% if answer.category == @category %>
 	    <div class="show-answer-position">A:- <%= answer.my_answer %></div>
+	    <% user = User.find(answer.user_id)%>
+	    <div class="show-email-position">
+	      <%= user.email %><br>
+	      <%= @question.created_at.strftime('%c') %>
+	    </div>
 	    <div class="questions-devider"></div>
 	  <% end %>
 	<% end %>

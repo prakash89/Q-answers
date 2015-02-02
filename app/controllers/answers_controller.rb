@@ -11,6 +11,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
     @answer.category = @category
+    @answer.user_id = current_user.id
     if @answer.save
       redirect_to questions_show_path(@category, @question.id)
     else

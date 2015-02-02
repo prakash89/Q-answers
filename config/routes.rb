@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  root :to => 'home#index'
 
   devise_for :users
   get 'subjects/index'
-  root :to => 'subjects#index'
 
   get 'questions/:category' => 'questions#index', :as => :questions_index
   get 'questions/:category/new' => 'questions#new', :as => :questions_new

@@ -26,32 +26,32 @@ feature "checking text in questions page" do
   before(:each) { apllication_signin } 
    
   scenario "User should see the title in ruby questions page" do
-    click_link "ruby_redirection", href: '/questions/ruby'
+    click_link "Ruby", href: '/questions/ruby'
     expect(page).to have_text("Ruby Questions")
   end
 
   scenario "User should see the title in rails questions page" do
-    click_link "rails_redirection", href: '/questions/rails'
+    click_link "Rails", href: '/questions/rails'
     expect(page).to have_text("Rails Questions")
   end
 
   scenario "User should see the title in html questions page" do
-    click_link "html_redirection",href: '/questions/html&css'
+    click_link "Html&Css",href: '/questions/html&css'
     expect(page).to have_text("Html&Css Questions")
   end
 
   scenario "User should see the title in jquery questions page" do
-    click_link "jquery_redirection", href: '/questions/javascript&jquery'
+    click_link "Javascript&Jquery", href: '/questions/javascript&jquery'
     expect(page).to have_text("Javascript&Jquery Questions")
   end
 
   scenario "User should see the title in devops questions page" do
-    click_link "devops_redirection", href: '/questions/devops'
+    click_link "Devops", href: '/questions/devops'
     expect(page).to have_text("Devops Questions")
   end
 
   scenario "User should see the title in testing questions page" do
-    click_link "testing_redirection", href: '/questions/testing'
+    click_link "Testing", href: '/questions/testing'
     expect(page).to have_text("Testing Questions")
   end
 end
@@ -62,27 +62,27 @@ feature "checking ask question link in question page" do
   after(:each) {expect(page).to have_button("Ask Question")}
 
   scenario "User should see the ask question link in ruby questions page" do
-    click_link "ruby_redirection"
+    click_link "Ruby", href: '/questions/ruby'
   end
 
   scenario "User should see the ask question link in rails questions page" do
-    click_link "rails_redirection"
+    click_link "Rails", href: '/questions/rails'
   end
 
   scenario "User should see the ask question link in html questions page" do
-    click_link "html_redirection"
+    click_link "Html&Css",href: '/questions/html&css'
   end
 
   scenario "User should see the ask question link in jquery questions page" do
-    click_link "jquery_redirection"
+    click_link "Javascript&Jquery", href: '/questions/javascript&jquery'
   end
 
   scenario "User should see the ask question link in devops questions page" do
-    click_link "devops_redirection"
+    click_link "Devops", href: '/questions/devops'
   end
 
   scenario "User should see the ask question link in testing questions page" do
-    click_link "testing_redirection"
+    click_link "Testing", href: '/questions/testing'
   end
 end
 

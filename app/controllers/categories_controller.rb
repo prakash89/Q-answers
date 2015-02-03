@@ -27,4 +27,10 @@ class CategoriesController < ApplicationController
     }
   ]
   end
+
+  def show
+    @category = params[:id]
+    @questions = Question.all.reverse
+  end
+
 end

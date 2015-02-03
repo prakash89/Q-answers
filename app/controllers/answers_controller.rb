@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
     @answer.category = @category
     @answer.user_id = current_user.id
     if @answer.save
-      redirect_to questions_show_path(@category, @question.id)
+      redirect_to question_path(@question.id)
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
     if @answer.update(answer_params)
-      redirect_to questions_show_path(@category, @question.id)
+      redirect_to question_path(@question.id)
     else
       render 'edit'
     end

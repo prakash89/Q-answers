@@ -3,19 +3,11 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   devise_for :users
-  # get 'subjects/index'
+  resources :categories, only: [:index, :show]
+  resources :questions, only: [:new, :show, :create, :edit, :update] do
+    resources :answers, only: [:new, :create, :edit, :update]
+  end
 
-  # get 'questions/:category' => 'questions#index', :as => :questions_index
-  # get 'questions/:category/new' => 'questions#new', :as => :questions_new
-  # post 'questions/:category/create' => 'questions#create', :as => :questions_create
-  # get 'questions/:category/:id' => 'questions#show', :as => :questions_show
-  # get 'questions/:category/:id/edit' => 'questions#edit', :as => :questions_edit
-  # put 'questions/:category/:id' => 'questions#update', :as => :questions_update
-
-  # get 'answers/:category/new' => 'answers#new', :as => :answers_new
-  # post 'answers/:category/create' => 'answers#create', :as => :answers_create
-  # get 'answers/:category/:id/edit' => 'answers#edit', :as => :answer_edit
-  # put 'answers/:category/:id' => 'answers#update', :as => :answer_update
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

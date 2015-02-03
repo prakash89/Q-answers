@@ -1,14 +1,14 @@
 <div class="container">
 	<h1><%= @category.titleize %> Questions</h1>
 	<div>
-		<%= button_to "Ask Question", questions_new_path(@category), class: "button ask-questions-position", method: "get"%>
-		<%= button_to "Home page", subjects_index_path, class: "button back-button-position", method: "get" %>
+		<%= link_to "Ask Question", new_question_path(category_id: @category), class: "button ask-questions-position" %>
+		<%= link_to "Home page", categories_path, class: "button back-button-position" %>
 	</div>
 	<div class="form-padding">
 		<% @questions.each do |question| %>
 		  <div>
 			  <% if question.category == @category %>
-			    <a href="<%= questions_show_path(@category,question) %>" id="title_link"><h4 class="questions-style"><%= question.title %></h4></a>
+			    <a href="<%= question_path(question) %>" id="title_link"><h4 class="questions-style"><%= question.title %></h4></a>
 			    <div class="description-style"><%= question.description %></div>
 			    <div class="questions-devider"></div>
 			  <% end %>

@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   	@question.category = @category
     @question.user_id = current_user.id
   	if @question.save
-      redirect_to questions_index_path
+      redirect_to category_path(id: @question.category)
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update(questions_params)
-      redirect_to questions_show_path(@category, @question.id)
+      redirect_to question_path(@question)
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
   private
 
   def category_params
-    @category = params[:category]
+    @category = params[:category_id]
   end
 
   def questions_params

@@ -4,8 +4,8 @@ require_relative '../rails_helper'
 feature "visiting create questions page" do
     
   scenario "user should see 'ask questions here' text in create questions page" do
-    visit "/questions/:category"
-    click_button "Ask Question"
+    visit "/categories/ruby"
+    click_link "Ask Question"
     expect(page).to have_text("Ask Questions Here")
   end
 end
@@ -17,8 +17,8 @@ before(:each) { apllication_signin }
 
   scenario "user should create question in create question page" do
     question
-    visit "/questions/:category"
-    click_button "Ask Question"
+    visit "/categories/ruby"
+    click_link "Ask Question"
     expect(page).to have_text("Ask Questions Here")
     fill_in "Title", :with => "some text"
     fill_in "Description", :with => "some more text"
@@ -28,7 +28,7 @@ before(:each) { apllication_signin }
 
   scenario "user should edit question in edit question page" do
     question
-    visit "/questions/ruby"
+    visit "/categories/ruby"
     click_link "some text"
     expect(page).to have_link("Edit Question")
     click_link("Edit Question")
@@ -42,7 +42,7 @@ before(:each) { apllication_signin }
 
   scenario "user should view question in view question page" do
     question
-    visit "/questions/ruby"
+    visit "/categories/ruby"
     click_link "some text"
     expect(page).to have_link("Edit Question")
     expect(page).to have_text("some text")

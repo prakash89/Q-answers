@@ -26,32 +26,32 @@ feature "checking text in questions page" do
   before(:each) { apllication_signin } 
    
   scenario "User should see the title in ruby questions page" do
-    click_link "Ruby", href: '/questions/ruby'
+    click_link "Ruby", href: '/categories/ruby'
     expect(page).to have_text("Ruby Questions")
   end
 
   scenario "User should see the title in rails questions page" do
-    click_link "Rails", href: '/questions/rails'
+    click_link "Rails", href: '/categories/rails'
     expect(page).to have_text("Rails Questions")
   end
 
   scenario "User should see the title in html questions page" do
-    click_link "Html&Css",href: '/questions/html&css'
+    click_link "Html&Css",href: '/categories/html&css'
     expect(page).to have_text("Html&Css Questions")
   end
 
   scenario "User should see the title in jquery questions page" do
-    click_link "Javascript&Jquery", href: '/questions/javascript&jquery'
+    click_link "Javascript&Jquery", href: '/categories/javascript&jquery'
     expect(page).to have_text("Javascript&Jquery Questions")
   end
 
   scenario "User should see the title in devops questions page" do
-    click_link "Devops", href: '/questions/devops'
+    click_link "Devops", href: '/categories/devops'
     expect(page).to have_text("Devops Questions")
   end
 
   scenario "User should see the title in testing questions page" do
-    click_link "Testing", href: '/questions/testing'
+    click_link "Testing", href: '/categories/testing'
     expect(page).to have_text("Testing Questions")
   end
 end
@@ -59,40 +59,31 @@ end
 feature "checking ask question link in question page" do
   let(:user) {FactoryGirl.create(:user)}
   before(:each) { apllication_signin }
-  after(:each) {expect(page).to have_button("Ask Question")}
+  after(:each) {expect(page).to have_link("Ask Question")}
 
   scenario "User should see the ask question link in ruby questions page" do
-    click_link "Ruby", href: '/questions/ruby'
+    click_link "Ruby", href: '/categories/ruby'
   end
 
   scenario "User should see the ask question link in rails questions page" do
-    click_link "Rails", href: '/questions/rails'
+    click_link "Rails", href: '/categories/rails'
   end
 
   scenario "User should see the ask question link in html questions page" do
-    click_link "Html&Css",href: '/questions/html&css'
+    click_link "Html&Css",href: '/categories/html&css'
   end
 
   scenario "User should see the ask question link in jquery questions page" do
-    click_link "Javascript&Jquery", href: '/questions/javascript&jquery'
+    click_link "Javascript&Jquery", href: '/categories/javascript&jquery'
   end
 
   scenario "User should see the ask question link in devops questions page" do
-    click_link "Devops", href: '/questions/devops'
+    click_link "Devops", href: '/categories/devops'
   end
 
   scenario "User should see the ask question link in testing questions page" do
-    click_link "Testing", href: '/questions/testing'
+    click_link "Testing", href: '/categories/testing'
   end
 end
 
-def apllication_signin
-  visit "/"
-  click_link "Log In"
-  expect(page).to have_text("Log in")
-  fill_in "user_email", :with => user.email
-  fill_in "user_password", :with => user.password
-  click_button "Log in"
-  expect(page).to have_text("Welcome to Q&A")
-end
 

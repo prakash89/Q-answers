@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>Edit Answer Here</h1>
-	<%= form_for @answer, url: answer_update_path(@category, @answer, question_id: @question.id), method: "put" do |a| %>
+	<%= form_for @answer, url: question_answer_path(@answer, question_id: @question.id) do |a| %>
 	  <h4 class="show-header">Q:- <%= @question.title %></h4>
 	  <div class="show-description"><%= @question.description %></div>
 	  <div class="questions-devider"></div>

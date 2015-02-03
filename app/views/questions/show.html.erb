@@ -5,12 +5,12 @@
 	  <%= @user.email %><br>
 	  <%= @question.created_at.strftime('%c') %>
 	</div>
-	<%= link_to "Edit Question", questions_edit_path(@category, @question), class: "button" %>
+	<%= link_to "Edit Question", edit_question_path(@question), class: "button" %>
 	<div class="questions-devider"></div>
 	<% @question.answers.each do |answer| %>
 	  <% if answer.category == @category %>
 	    <div class="show-answer-position">A:- <%= answer.my_answer %></div>
-	    <%= link_to "Edit Answer", answer_edit_path(@category, answer, question_id: @question.id), class: "button" %>
+	    <%= link_to "Edit Answer", edit_question_answer_path(question_id: @question.id, id: answer), class: "button" %>
 	    <div class="show-email-position">
 	      <%= answer.user.email %><br>
 	      <%= @question.created_at.strftime('%c') %>
@@ -18,5 +18,5 @@
 	    <div class="questions-devider"></div>
 	  <% end %>
 	<% end %>
-	<%= link_to "Share Your Answer", answers_new_path(@category, question_id: @question.id), class: "button" %>
+	<%= link_to "Share Your Answer", new_question_answer_path(question_id: @question.id), class: "button" %>
 </div>

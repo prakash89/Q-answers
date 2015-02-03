@@ -1,10 +1,10 @@
 <div class="container">
 	<h1>Edit Questions Here</h1>
 	<div>
-		<%= button_to "Back", questions_index_path(@category), class: "button back-button-position", method: "get" %>
+		<%= link_to "Back", questions_path(category_id: @category), class: "button back-button-position" %>
 	</div>
 	<div class="form-padding">
-		<%= form_for @question, url: questions_update_path(@category,@question), method: "put" do |q| %>
+		<%= form_for @question, url: question_path(@question) do |q| %>
 		  <div>
 			  <%= q.label :title %><br>
 			  <%= q.text_field :title, class: "text-field-dimenstions" %>

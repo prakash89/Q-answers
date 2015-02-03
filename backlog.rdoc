@@ -1,20 +1,40 @@
-feature : visiting answer page for related question
-    
-    scenario : user should view answer page for related question
-        Given i am in ruby show questions page
-        When i follow link 'Answer'
-        Then I should be on the create answer page 
-        And I can see 'Answer' field
+feature : like or unlike question
+  
+  scenario : User should able to like question 
+    Given i am in category index page
+    when i follow link 'Ruby'
+    Then i should be on the category show page
+    And i follow link 'some text'
+    Then i should be on the question show path
+    And i press 'like' button in question portion
+    Then i can see increment the 'vote' in question portion
 
+  scenario : User should able to unlike question 
+    Given i am in category index page
+    when i follow link 'Ruby'
+    Then i should be on the category show page
+    And i follow link 'some text'
+    Then i should be on the question show path
+    And i press 'unlike' button in question portion
+    Then i can see decrement the 'vote' in question portion
 
-feature : create answer in create answer page
+feature : like or unlike answer
+  
+  scenario : User should able to like answer 
+    Given i am in category index page
+    when i follow link 'Ruby'
+    Then i should be on the category show page
+    And i follow link 'some text'
+    Then i should be on the question show path
+    And i press 'like' button in answer portion
+    Then i can see increment the 'vote' in answer portion
 
-   scenario : User should create a answer for related question
-        Given i am in ruby show questions page
-        When i follow link 'Answer'
-        Then I should be on the create answer page 
-        And I fill in "Answer"
-        And I press "Post your Answer" button
-        Then I should be on the ruby show questions page
-        And I can see answer of that question in ruby show questions page
+  scenario : User should able to unlike question 
+    Given i am in category index page
+    when i follow link 'Ruby'
+    Then i should be on the category show page
+    And i follow link 'some text'
+    Then i should be on the question show path
+    And i press 'unlike' button in answer portion
+    Then i can see decrement the 'vote' in answer portion
 

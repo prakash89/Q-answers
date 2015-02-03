@@ -18,4 +18,18 @@ end
     end
   end
 
+  describe "GET edit" do
+    it "user should edit the answer" do
+      get :edit, category: 'ruby', id: answer.id, question_id: answer.question.id
+      expect(assigns[:answer]).to eq(answer)
+    end
+  end
+
+  describe "PUT update" do
+    it "user should update the answer" do
+      put :update, category: "ruby", id: answer.id, question_id: answer.question.id, answer: {my_answer: "My New Answer"}
+      expect(assigns[:answer]).to eq(answer)
+    end
+  end
+
 end

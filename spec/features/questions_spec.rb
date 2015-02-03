@@ -60,8 +60,8 @@ feature "Like or Dislike the questions" do
     question
     visit "/categories/ruby"
     click_link "some text"
-    expect(page).to have_link("Upvote")
-    click_link "Upvote"
+    expect(page).to have_link("question_like_button")
+    click_link "question_like_button"
     expect(question.get_upvotes.size).to eq(1)
   end
 
@@ -69,8 +69,8 @@ feature "Like or Dislike the questions" do
     question
     visit "/categories/ruby"
     click_link "some text"
-    expect(page).to have_link("Downvote")
-    click_link "Downvote"
+    expect(page).to have_link("question_unlike_button")
+    click_link "question_unlike_button"
     expect(question.get_downvotes.size).to eq(1)
   end
 end

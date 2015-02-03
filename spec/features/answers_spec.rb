@@ -5,8 +5,8 @@ require_relative '../rails_helper'
 feature "Create answer in create answer page" do
 
 let(:user) {FactoryGirl.create(:user)}	
-let(:answer) {FactoryGirl.create(:answer)}
 let(:question) {FactoryGirl.create(:question, category: "ruby")}
+let(:answer) {FactoryGirl.create(:answer, question_id: question.id)}
 before(:each) { apllication_signin }
 
 	scenario "user should create answer" do
@@ -27,12 +27,6 @@ before(:each) { apllication_signin }
     answer
     visit "/categories/ruby"
     click_link "some text"
-    expect(page).to have_link("Share Your Answer")
-		click_link("Share Your Answer")
-		expect(page).to have_text("Post Answer Here")
-		expect(page).to have_text("My answer")
-		fill_in "My answer", :with => "My Answer"
-		click_button("Post Your Answer")
 		expect(page).to have_link("Edit Answer")
 		click_link("Edit Answer")
 		expect(page).to have_text("My answer")
@@ -45,7 +39,7 @@ end
 feature "Like or Dislike the answer" do
   let(:user) {FactoryGirl.create(:user)}
   let(:question) {FactoryGirl.create(:question, category: "ruby")}
-  let(:answer) {FactoryGirl.create(:answer)}
+  let(:answer) {FactoryGirl.create(:answer, question_id: question.id)}
   before(:each) { apllication_signin }
 
   scenario "user should able to like answer" do
@@ -53,9 +47,9 @@ feature "Like or Dislike the answer" do
     answer
     visit "/categories/ruby"
     click_link "some text"
-    expect(page).to have_link("Upvote")
-    click_link "Upvote"
-    expect(page).to have_text(1)
+    expect(page).to have_link("answer_unlike_button")
+    click_link "answer_like_button"
+    expect(answer.get_upvotes.size).to eq(1)
   end
 
   scenario "user should able to unlike answer" do
@@ -63,8 +57,8 @@ feature "Like or Dislike the answer" do
     answer
     visit "/categories/ruby"
     click_link "some text"
-    expect(page).to have_link("Downvote")
-    click_link "Downvote"
-    expect(page).to have_text(0)
+    expect(page).to have_link("answer_unlike_button")
+    click_link "answer_unlike_button"
+    expect(answer.get_downvotes.size).to eq(1)
   end
 end

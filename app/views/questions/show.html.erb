@@ -1,9 +1,11 @@
 <div class="container">
 	<h4 class="show-header">Q:- <%= @question.title %></h4>
 	<div class="show-description"><%= @question.description %></div>
-	<%= link_to "Upvote", like_question_path(@question), method: :put %>
-    <%= link_to "Downvote", dislike_question_path(@question), method: :put %>
+	<div class="edit-buttons-position">
+	  <%= link_to image_tag("thumb_up.gif"), like_question_path(@question), method: :put, id: 'question_like_button' %>
+    <%= link_to image_tag("thumb_down.png"), dislike_question_path(@question), method: :put, id: 'question_unlike_button' %>
     <%= @question.get_upvotes.size %>
+  </div>
 	<div class="right-image-position">
 	  <%= @user.email %><br>
 	  <%= @question.created_at.strftime('%c') %>
@@ -13,9 +15,11 @@
 	<% @question.answers.each do |answer| %>
 	  <% if answer.category == @category %>
 	    <div class="show-answer-position">A:- <%= answer.my_answer %></div>
-	    <%= link_to "Upvote", like_question_answer_path(question_id: @question.id, id: answer), method: :put %>
-      <%= link_to "Downvote", dislike_question_answer_path(question_id: @question.id, id: answer), method: :put %>
-      <%= answer.get_upvotes.size %>
+	    <div class="edit-buttons-position">
+		    <%= link_to image_tag("thumb_up.gif"), like_question_answer_path(question_id: @question.id, id: answer), method: :put, id: 'answer_like_button' %>
+		    <%= link_to image_tag("thumb_down.png"), dislike_question_answer_path(question_id: @question.id, id: answer), method: :put, id: 'answer_unlike_button' %>
+		    <%= answer.get_upvotes.size %>
+		  </div>
 	    <%= link_to "Edit Answer", edit_question_answer_path(question_id: @question.id, id: answer), class: "button" %>
 	    <div class="show-email-position">
 	      <%= answer.user.email %><br>

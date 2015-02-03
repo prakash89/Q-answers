@@ -39,6 +39,18 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def upvote
+    @question = Question.find(params[:id])
+    @question.liked_by current_user
+    redirect_to @question
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.downvote_from current_user
+    redirect_to @question
+  end
+
   private
 
   def category_params

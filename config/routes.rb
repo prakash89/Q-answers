@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   devise_for :users
   resources :categories, only: [:index, :show]
   resources :questions, only: [:new, :show, :create, :edit, :update] do
-    resources :answers, only: [:new, :create, :edit, :update]
+    member do
+      put "like", to: "questions#upvote"
+      put "dislike", to: "questions#downvote"
+    end
+    resources :answers, only: [:new, :create, :edit, :update] do
+      member do
+        put "like", to: "answers#upvote"
+        put "dislike", to: "answers#downvote"
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

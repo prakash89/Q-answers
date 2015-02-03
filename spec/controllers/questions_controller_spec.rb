@@ -39,4 +39,20 @@ RSpec.describe QuestionsController, :type => :controller do
     end
   end
 
+  describe "PUT upvote" do
+    it "user should vote to the question" do
+      expect do
+        put :upvote, category: "ruby", user_id: user.id, id: question.id
+      end.to change(question.get_upvotes, :count).by(1)
+    end
+  end
+
+  describe "PUT downvote" do
+    it "user should down vote to the question" do
+      expect do
+        put :downvote, category: "ruby", user_id: user.id, id: question.id
+      end.to change(question.get_downvotes, :count).by(1)
+    end
+  end
+
 end

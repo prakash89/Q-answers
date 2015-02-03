@@ -41,3 +41,30 @@ before(:each) { apllication_signin }
 		expect(page).to have_text("My New Answer")
   end
 end
+
+feature "Like or Dislike the answer" do
+  let(:user) {FactoryGirl.create(:user)}
+  let(:question) {FactoryGirl.create(:question, category: "ruby")}
+  let(:answer) {FactoryGirl.create(:answer)}
+  before(:each) { apllication_signin }
+
+  scenario "user should able to like answer" do
+    question
+    answer
+    visit "/categories/ruby"
+    click_link "some text"
+    expect(page).to have_link("Upvote")
+    click_link "Upvote"
+    expect(page).to have_text(1)
+  end
+
+  scenario "user should able to unlike answer" do
+    question
+    answer
+    visit "/categories/ruby"
+    click_link "some text"
+    expect(page).to have_link("Downvote")
+    click_link "Downvote"
+    expect(page).to have_text(0)
+  end
+end

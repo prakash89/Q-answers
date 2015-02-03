@@ -32,4 +32,20 @@ end
     end
   end
 
+  describe "PUT upvote" do
+    it "user should vote to the answer" do
+      expect do
+        put :upvote, category: "ruby", user_id: user.id, id: answer.id, question_id: answer.question.id
+      end.to change(answer.get_upvotes, :count).by(1)
+    end
+  end
+
+  describe "PUT downvote" do
+    it "user should down vote to the question" do
+      expect do
+        put :downvote, category: "ruby", user_id: user.id, id: answer.id, question_id: answer.question.id
+      end.to change(answer.get_downvotes, :count).by(1)
+    end
+  end
+
 end

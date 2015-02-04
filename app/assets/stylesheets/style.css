@@ -83,6 +83,10 @@ h1 {
 	padding-top: 20px;
 }
 
+.post-btn-padding {
+	padding-bottom: 30px;
+}
+
 .questions-style {
 	color: #0c65a5;
 }
@@ -131,4 +135,72 @@ h1 {
 }
 .edit-buttons-position {
 	margin-bottom: 20px;
+}
+.home-page-image {
+	background: url("/assets/notaries.jpg");
+	background-size: cover;
+	height: 675px;
+	margin-top: -34px;
+	margin-right: -8px;
+	margin-left: -8px;
+}
+
+.home-page-heading {
+	color: #FFFFCC;
+	margin-bottom: 30px;
+	padding-top: 30px;
+}
+
+.sign-in-btn {
+	float: right;
+	margin-right: 40px;
+}
+
+h2 {
+   text-align: center;
+   color: #0B0B61;
+   padding-top: 20px;
+}
+.new_user {
+	text-align: center;
+}
+#user_email {
+    width: 30%;
+    height: 14px;
+    padding: 6px 12px;
+    margin-left: 50px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+#user_password {
+	width: 30%;
+    height: 14px;
+    padding: 6px 12px;
+    margin-left: 50px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+#user_password_confirmation {
+    width: 30%;
+    height: 14px;
+    padding: 6px 12px;
+    margin-left: 50px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.field {
+	margin-bottom: 20px;
+}
+
+.log-out-btn {
+	float: right;
 }

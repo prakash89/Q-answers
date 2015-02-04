@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Post Answer Here</h1>
+	<h1>Your Answer</h1>
 	<%= form_for @answer, url: question_answers_path(question_id: @question.id) do |a| %>
 	  <h4 class="show-header">Q:- <%= @question.title %></h4>
 	  <div class="show-description"><%= @question.description %></div>
@@ -9,7 +9,7 @@
 		  <%= a.text_area :my_answer, :rows => 20, :cols => 120%>
 		  <%= custom_error_message(a.object, :my_answer) %>
 	  </div>
-	  <div class="padding-btwn-fileds">
+	  <div class="padding-btwn-fileds post-btn-padding">
 		  <%= a.submit "Post Your Answer", class: "button" %>
 	  </div>
 	<% end %>

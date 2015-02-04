@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>Ask Questions Here</h1>
+	<h1>Your Question</h1>
 	<div class="form-padding">
 		<%= form_for @question, url: questions_path(category_id: @category) do |q| %>
 		  <div>
@@ -12,7 +12,7 @@
 			  <%= q.text_area :description, :rows => 20, :cols => 120%>
 			  <%= custom_error_message(q.object, :description) %>
 		  </div>
-		  <div class="padding-btwn-fileds">
+		  <div class="padding-btwn-fileds post-btn-padding">
 		    <%= q.submit "Post Your Question", class: "button" %>
 		  </div>
 		<% end %>

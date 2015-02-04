@@ -1,4 +1,5 @@
 <div class="container">
+<h1>View Question</h1>
 	<h4 class="show-header">Q:- <%= @question.title %></h4>
 	<div class="show-description"><%= @question.description %></div>
 	<div class="edit-buttons-position">
@@ -28,5 +29,7 @@
 	    <div class="questions-devider"></div>
 	  <% end %>
 	<% end %>
-	<%= link_to "Share Your Answer", new_question_answer_path(question_id: @question.id), class: "button" %>
+	<div class=" post-btn-padding">
+	  <%= link_to "Share Your Answer", new_question_answer_path(question_id: @question.id), class: "button" %>
+	</div>
 </div>

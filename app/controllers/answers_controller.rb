@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-
+  before_filter :authenticate_user!
   before_action :category_params
 
   def new

@@ -15,7 +15,7 @@ before(:each) { apllication_signin }
 		click_link "some text"
 		expect(page).to have_link("Share Your Answer")
 		click_link("Share Your Answer")
-		expect(page).to have_text("Post Answer Here")
+		expect(page).to have_text("Your Answer")
 		expect(page).to have_text("My answer")
 		fill_in "My answer", :with => "My Answer"
 		click_button("Post Your Answer")

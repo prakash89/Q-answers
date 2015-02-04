@@ -2,11 +2,13 @@ require_relative '../spec_helper'
 require_relative '../rails_helper'
 
 feature "visiting create questions page" do
-    
-  scenario "user should see 'ask questions here' text in create questions page" do
+  let(:user) {FactoryGirl.create(:user)}
+  
+  scenario "user should see 'your question' text in create questions page" do
+    apllication_signin
     visit "/categories/ruby"
     click_link "Ask Question"
-    expect(page).to have_text("Ask Questions Here")
+    expect(page).to have_text("Your Question")
   end
 end
 
@@ -19,7 +21,7 @@ feature "create question in create question page" do
     question
     visit "/categories/ruby"
     click_link "Ask Question"
-    expect(page).to have_text("Ask Questions Here")
+    expect(page).to have_text("Your Question")
     fill_in "Title", :with => "some text"
     fill_in "Description", :with => "some more text"
     click_button "Post Your Question"

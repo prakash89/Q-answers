@@ -12,7 +12,7 @@ feature "User authentication" do
 		fill_in "user_password", :with => "123456789"
 		fill_in "user_password_confirmation", :with => "123456789"
 		click_button "Sign up"
-		expect(page).to have_text("Welcome to Q&A")
+		expect(page).to have_text("Categories")
 	end
 
 	scenario "Create new user for existing email" do
@@ -33,7 +33,7 @@ feature "User authentication" do
     fill_in "user_email", :with => user.email
     fill_in "user_password", :with => user.password
     click_button "Log in"
-    expect(page).to have_text("Welcome to Q&A")
+    expect(page).to have_text("Categories")
 	end
 
 	scenario "User should able to log in with invalid credentials" do

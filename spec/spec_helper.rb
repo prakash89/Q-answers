@@ -91,5 +91,5 @@ def apllication_signin
   fill_in "user_email", :with => user.email
   fill_in "user_password", :with => user.password
   click_button "Log in"
-  expect(page).to have_text("Welcome to Q&A")
+  expect(page).to have_text("Categories")
 end

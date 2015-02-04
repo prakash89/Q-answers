@@ -21,7 +21,9 @@
 		    <%= link_to image_tag("thumb_down.png"), dislike_question_answer_path(question_id: @question.id, id: answer), method: :put, id: 'answer_unlike_button' %>
 		    <%= answer.get_upvotes.size %>
 		  </div>
+		  <div class="edit-answer-btn">
 	    <%= link_to "Edit Answer", edit_question_answer_path(question_id: @question.id, id: answer), class: "button" %>
+	    </div>
 	    <div class="show-email-position">
 	      <%= answer.user.email %><br>
 	      <%= @question.created_at.strftime('%c') %>

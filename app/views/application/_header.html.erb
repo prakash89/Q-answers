@@ -1,3 +1,10 @@
-<% if user_signed_in? %>
-  <%= link_to 'logout', destroy_user_session_path, class: "log-out-btn", :method => :delete %>
-<% end %>
+<div class="header-position">
+<h3><%= link_to "Q-Answers", categories_path, class: "app-name-in-header" %></h3>
+	<% if user_signed_in? %>
+		<div class="header-email-position"><%= current_user.email %></div>
+		<%= link_to 'logout', destroy_user_session_path, class: "log-out-btn", :method => :delete %>
+	<% else %>
+		<%= link_to "Sign Up", new_user_registration_path, class: "sign-up-btn" %>
+		<%= link_to "Log In", new_user_session_path, class: "sign-in-btn" %>
+  <% end %>
+</div>

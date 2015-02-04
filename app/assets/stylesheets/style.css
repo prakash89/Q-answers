@@ -51,15 +51,15 @@ h1 {
 }
 
 .button {
-    padding: 6px 12px;
-    background-color: #66CCFF;
-    font-size: 14px;
-    line-height: 1.428571429;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #A6A6A6;
-    border-radius: 4px;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
+  padding: 6px 12px;
+  background-color: #66CCFF;
+  font-size: 14px;
+  line-height: 1.428571429;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
 }
 
 .back-button-position {
@@ -100,29 +100,29 @@ h1 {
 }
 
 .questions-devider {
-    border-bottom: 1px solid #cccccc; margin: 20px -20px;
+  border-bottom: 1px solid #cccccc; margin: 20px -20px;
 }
 
 .help-block {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: #737373;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
 }
 
 .show-header {
-   font-size: 24px;
-   line-height: 1.35;
-   font-weight: normal;
-   margin-bottom: .5em;
+	font-size: 24px;
+	line-height: 1.35;
+	font-weight: normal;
+	margin-bottom: .5em;
 }
 
 .show-description {
-   font-size: 14px;
-   line-height: 1.75;
-   font-weight: normal;
-   margin-right: 250px;
-   margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: normal;
+  margin-right: 250px;
+  margin-bottom: 25px;
 }
 
 .show-answer-position {
@@ -145,56 +145,51 @@ h1 {
 	margin-left: -8px;
 }
 
-.home-page-heading {
+.home-page-text {
 	color: #FFFFCC;
 	margin-bottom: 30px;
-	padding-top: 30px;
-}
-
-.sign-in-btn {
-	float: right;
-	margin-right: 40px;
+	padding-top: 100px;
 }
 
 h2 {
-   text-align: center;
-   color: #0B0B61;
-   padding-top: 20px;
+  text-align: center;
+  color: #0B0B61;
+  padding-top: 20px;
 }
 .new_user {
 	text-align: center;
 }
 #user_email {
-    width: 30%;
-    height: 14px;
-    padding: 6px 12px;
-    margin-left: 50px;
-    font-size: 14px;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+  width: 30%;
+  height: 14px;
+  padding: 6px 12px;
+  margin-left: 50px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 }
 
 #user_password {
 	width: 30%;
-    height: 14px;
-    padding: 6px 12px;
-    margin-left: 50px;
-    font-size: 14px;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+  height: 14px;
+  padding: 6px 12px;
+  margin-left: 50px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 }
 
 #user_password_confirmation {
-    width: 30%;
-    height: 14px;
-    padding: 6px 12px;
-    margin-left: 50px;
-    font-size: 14px;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+  width: 30%;
+  height: 14px;
+  padding: 6px 12px;
+  margin-left: 50px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 }
 
 .field {
@@ -203,4 +198,42 @@ h2 {
 
 .log-out-btn {
 	float: right;
+	color: #fff;
+	margin-top: 8px;
+	margin-right: 20px;
+}
+
+.header-position {
+	background-image: linear-gradient(to bottom, #3C3C3C 0px, #222222 100%);
+	width: 100%;
+	height: 50px;
+	margin-top: -19px;
+	padding-right: 16px;
+	margin-left: -8px;
+}
+
+.app-name-in-header {
+	float: left;
+	color: #fff;
+	margin-left: 15px;
+	margin-top: 8px;
+}
+
+.header-email-position {
+	color: #fff;
+	padding-top: 8px;
+	float: right;
+}
+
+.sign-up-btn {
+	float: right;
+	margin-top: 8px;
+	color: #fff;
+}
+
+.sign-in-btn {
+	float: right;
+	margin-top: 8px;
+	color: #fff;
+	margin-right: 15px;
 }

@@ -86,4 +86,19 @@ feature "checking ask question link in question page" do
   end
 end
 
+feature "Search functionality" do
+  let(:user) {FactoryGirl.create(:user)}
+  let(:question) {FactoryGirl.create(:question, category: "ruby")}
+  before(:each) { apllication_signin }
+
+  scenario "User should search questions title for particular subject" do
+    question
+    click_link "Ruby", href: '/categories/ruby'
+    expect(page).to have_button("Search")
+    fill_in "search", :with => "some text"
+    click_button "Search"
+    expect(page).to have_text("some text")
+  end
+end
+
 

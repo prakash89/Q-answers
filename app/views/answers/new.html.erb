@@ -2,11 +2,11 @@
 	<h1>Your Answer</h1>
 	<%= form_for @answer, url: question_answers_path(question_id: @question.id) do |a| %>
 	  <h4 class="show-header">Q:- <%= @question.title %></h4>
-	  <div class="show-description"><%= @question.description %></div>
+	  <div class="show-description"><%= @question.description.html_safe %></div>
 	  <div class="questions-devider"></div>
 	  <div class="padding-btwn-fileds">
 		  <%= a.label :my_answer %><br>
-		  <%= a.text_area :my_answer, :rows => 20, :cols => 120%>
+		  <%= a.text_area :my_answer,:class => "tinymce", :rows => 20, :cols => 120%>
 		  <%= custom_error_message(a.object, :my_answer) %>
 	  </div>
 	  <div class="padding-btwn-fileds post-btn-padding">
@@ -14,3 +14,4 @@
 	  </div>
 	<% end %>
 </div>
+<%= tinymce %>

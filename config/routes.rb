@@ -13,8 +13,10 @@ Rails.application.routes.draw do
       member do
         put "like", to: "answers#upvote"
         put "dislike", to: "answers#downvote"
+        post "create_answer_comment", to: "comments#create_answer_comment"
       end
     end
+    resources :comments, only: [:new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

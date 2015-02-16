@@ -107,6 +107,12 @@ h1 {
   border-bottom: 1px solid #cccccc; margin: 20px -20px;
 }
 
+.comment-devider {
+  border-bottom: 1px solid #cccccc; margin: 20px -20px;
+  margin-left :130px;
+}
+
+
 .help-block {
   display: block;
   margin-top: 5px;
@@ -271,4 +277,19 @@ h3 {
 }
 .search_button {
 	height: 30px;
+}
+
+.comment_box {
+	overflow-y: auto;
+	height: 100px; 
+	width: 600px;
+}
+
+.comment_link {
+   text-decoration: none;
+   color: black;
+}
+.display_commet {
+	font-size: 12px;
+	margin-left: 150px;
 }

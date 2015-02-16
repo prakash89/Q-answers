@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
 	validates_presence_of :description, :message => "Description can't be blank"
 
 	has_many :answers
+  has_many :comments
 	belongs_to :user
 
   def self.search(search)

@@ -1,7 +1,7 @@
 <div class="container">
 <h1>View Question</h1>
 	<h4 class="show-header">Q:- <%= @question.title %></h4>
-	<div class="show-description"><%= @question.description %></div>
+	<div class="show-description"><%= @question.description.first(80).html_safe %></div>
 	<div class="edit-buttons-position">
 	  <%= link_to image_tag("thumb_up.gif"), like_question_path(@question), method: :put, id: 'question_like_button' %>
     <%= link_to image_tag("thumb_down.png"), dislike_question_path(@question), method: :put, id: 'question_unlike_button' %>

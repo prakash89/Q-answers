@@ -133,12 +133,14 @@ h1 {
   font-weight: normal;
   margin-right: 250px;
   margin-bottom: 25px;
+  margin-left: 50px;
 }
 
 .show-answer-position {
 	margin-bottom: 30px;
 	line-height: 1.75;
 	font-size: 14px;
+	margin-left: 50px;
 }
 .show-email-position {
 	margin-left: 760px;
@@ -292,4 +294,10 @@ h3 {
 .display_commet {
 	font-size: 12px;
 	margin-left: 150px;
+}
+.question_show_category {
+	margin-left :130px;
+}
+.question_count {
+	margin-top: -50px;
 }

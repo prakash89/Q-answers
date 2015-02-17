@@ -16,9 +16,9 @@
 		<% @questions.each do |question| %>
 		  <div>
 			  <% if question.category == @category %>
-			    <h4 class="questions-style"><a href="<%= question_path(question) %>" id="title_link"><%= question.title %></a></h4>
+			    <h4 class="questions-style question_show_category"><a href="<%= question_path(question) %>" id="title_link"><%= question.title %></a></h4>
 			    <!-- <div class=""><%#= question.description.first(10).html_safe %></div> -->
-			    <div class="padding-btwn-fileds"><%= question.answers.count %> Answer</div>
+			    <div class="question_count"><%= question.answers.count %> Answer</div>
 			    <div><%= question.get_upvotes.size %> Votes</div>
 			    <div class="questions-devider"></div>
 			  <% end %>

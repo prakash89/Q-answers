@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = params[:id]
-    @questions = Question.paginate(:page => params[:page], :per_page => 2).search(params[:search])
+    @questions = Question.paginate(:page => params[:page], :per_page => 10).search(params[:search])
   end
 
 end

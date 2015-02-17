@@ -11,10 +11,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
-  	@question = Question.new(questions_params)
-  	@question.category = @category
+    @question = Question.new(questions_params)
+    @question.category = @category
     @question.user_id = current_user.id
-  	if @question.save
+    if @question.save
+      @users = User.all
+      @users.each do |user|
+        UserNotifier.send_question_email(user).deliver
+      end
       redirect_to category_path(id: @question.category)
     else
       render 'new'

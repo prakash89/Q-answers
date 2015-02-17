@@ -1,0 +1,38 @@
+<% @question.answers.each do |answer| %>
+<% if answer.category == @category %>
+<div class="show-answer-position">A:- <%= answer.my_answer.html_safe %></div>
+<div class="edit-buttons-position">
+	<%= link_to image_tag("thumb_up.gif"), like_question_answer_path(question_id: @question.id, id: answer), method: :put, id: 'answer_like_button' %>
+	<%= link_to image_tag("thumb_down.png"), dislike_question_answer_path(question_id: @question.id, id: answer), method: :put, id: 'answer_unlike_button' %>
+	<%= answer.get_upvotes.size %>
+	<div class="comment-devider"></div>
+	<div>
+		<% answer.comments.each do |comment|%>
+		<div class="display_commet"><%= comment.comment_name %></div>
+		<div class="comment-devider"></div>
+		<% end %>
+	</div>
+	<%= form_tag(create_answer_comment_question_answer_path(answer_id: answer.id, question_id: @question.id), :method => "post") do %>
+	<div class="padding-btwn-fileds">
+		<a class="commentLink" id="answer-comment-<%= answer.id %>" data-id="<%= answer.id %>" class="comment_link" href="#">add a comment</a>
+	</div>
+	<div class="commentContainer" id="<%= "commentContainer_#{answer.id}" %>" style="display:none;">
+		<textarea class="textarea comment_box" id="comment" name="comment[comment_name]">
+		</textarea>
+		<%#= text_area_tag :comment, class: "comment_box" %>
+		<div class="padding-btwn-fileds post-btn-padding">
+			<%= submit_tag "Add Comment", class: "button" %>
+		</div>
+	</div>
+	<% end %>
+</div>
+<div class="edit-answer-btn">
+	<%= link_to "Edit Answer", edit_question_answer_path(question_id: @question.id, id: answer), class: "button" %>
+</div>
+<div class="show-email-position">
+	<%= answer.user.email %><br>
+	<%= @question.created_at.strftime('%c') %>
+</div>
+<div class="questions-devider"></div>
+<% end %>
+<% end %>

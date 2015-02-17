@@ -1,0 +1,31 @@
+<h4 class="show-header">Q:- <%= @question.title %></h4>
+<div class="show-description"><%= @question.description.html_safe %></div>
+<div class="edit-buttons-position">
+	<%= link_to image_tag("thumb_up.gif"), like_question_path(@question), method: :put, id: 'question_like_button' %>
+	<%= link_to image_tag("thumb_down.png"), dislike_question_path(@question), method: :put, id: 'question_unlike_button' %>
+	<%= @question.get_upvotes.size %>
+	<div class="comment-devider"></div>
+	<div>
+		<% @question.comments.each do |comment|%>
+		<div class="display_commet"><%= comment.comment_name %></div>
+		<div class="comment-devider"></div>
+		<% end %>
+	</div>
+	<%= form_tag(question_comments_path(question_id: @question.id), :method => "post") do %>
+	<div class="padding-btwn-fileds">
+		<a id="commentLink1" class="comment_link" href="#" data-id="<%= @question.id %>">add a comment</a>
+	</div>
+	<div id="<%= "commentContainer1_#{@question.id}" %>" style="display:none;">
+		<textarea class="textarea comment_box" placeholder="comment here" id="comment" name="comment[comment_name]">
+		</textarea>
+		<%#= text_area_tag :comment_name%>
+		<div class="padding-btwn-fileds post-btn-padding">
+			<%= submit_tag "Add Comment", class: "button" %>
+		</div>
+	</div>
+	<% end %>
+</div>
+<div class="right-image-position">
+	<%= @user.email %><br>
+	<%= @question.created_at.strftime('%c') %>
+</div>

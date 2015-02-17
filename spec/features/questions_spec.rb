@@ -77,3 +77,16 @@ feature "Like or Dislike the questions" do
   end
 end
 
+feature "comment to questions" do
+  let(:user) {FactoryGirl.create(:user)}
+  let(:question) {FactoryGirl.create(:question, category: "ruby")}
+  before(:each) { apllication_signin }
+
+  scenario "user should able to comment a question" do
+    question
+    visit "/categories/ruby"
+    click_link "some text"
+    expect(page).to have_link("add a comment")
+  end
+end
+

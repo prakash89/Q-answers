@@ -62,3 +62,17 @@ feature "Like or Dislike the answer" do
     expect(answer.get_downvotes.size).to eq(1)
   end
 end
+
+feature "comment to answers" do
+  let(:user) {FactoryGirl.create(:user)}
+  let(:question) {FactoryGirl.create(:question, category: "ruby")}
+  let(:answer) {FactoryGirl.create(:answer, question_id: question.id)}
+  before(:each) { apllication_signin }
+
+  scenario "user should able to comment a answer" do
+    question
+    visit "/categories/ruby"
+    click_link "some text"
+    expect(page).to have_link("add a comment")
+  end
+end

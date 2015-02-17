@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = params[:id]
-    @questions = ((params[:search]) && (params[:search] != "")) ? Question.search(params[:search]) : Question.all.reverse
+    @questions = Question.paginate(:page => params[:page], :per_page => 2).search(params[:search])
   end
 
 end

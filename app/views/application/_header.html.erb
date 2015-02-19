@@ -1,6 +1,20 @@
 <div class="header-position">
 <h3><%= link_to "Q-Answers", categories_path, class: "app-name-in-header" %></h3>
 	<% if user_signed_in? %>
+	<div class="dropdown dropdown-position">
+	<a class="dropdown-toggle dropdown-decoretion" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			Categories
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'ruby')%>">Ruby</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'rails')%>">Rails</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'html&css')%>">Html and Css</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'javascript&jquery')%>">Javascript and Jquery</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'devops')%>">Devops</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="<%= category_path(:id => 'testing')%>">Testing</a></li>
+		</ul>
+	</div>
 		<div class="header-email-position"><%= current_user.email %></div>
 		<%= link_to 'logout', destroy_user_session_path, class: "log-out-btn", :method => :delete %>
 	<% else %>
@@ -8,3 +22,9 @@
 		<%= link_to "Log In", new_user_session_path, class: "sign-in-btn" %>
   <% end %>
 </div>
+
+<script type="text/javascript">
+$(document).on('click', '.dropdown-toggle', function(){
+    $(this).dropdown('toggle');
+});  
+</script>

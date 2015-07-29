@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user.present? %>
 <%= render :partial => 'application/header' %>
+<% end %>
 
 <%= yield %>
 

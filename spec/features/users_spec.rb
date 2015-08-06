@@ -55,6 +55,6 @@ feature "User authentication" do
     click_button "Log in"
     expect(page).to have_link("logout")
 		click_link("logout")
-		expect(page).to have_text("Welcome Q-Answers")
+		expect(page).to have_text("AWESOME, HELPFULL, FREE")
 	end
 end

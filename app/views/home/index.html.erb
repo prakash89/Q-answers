@@ -53,18 +53,18 @@
 
 		<div class="row">
 			<div class="col-sm-6">
-				<h3><%= @question.last.title %></h3>
+				<h3><%= @question.last.title if @question.last %></h3>
 				<p><%= @question.last.description.html_safe if @question.last %></p>
 			</div>
 			<div class="col-sm-6">
-				<h3><%= @question.offset(1).last.title %></h3>
+				<h3><%= @question.offset(1).last.title if @question.offset(1).last %></h3>
 				<p><%= @question.offset(1).last.description.html_safe if @question.offset(1).last %></p>
 			</div>
 		</div> <!-- /row -->
 
 		<div class="row">
 			<div class="col-sm-6">
-				<h3><%= @question.offset(2).last.title %></h3>
+				<h3><%= @question.offset(2).last.title if @question.offset(2).last %></h3>
 				<p><%= @question.offset(2).last.description.html_safe if @question.offset(2).last %></p>
 			</div>
 			<div class="col-sm-6">

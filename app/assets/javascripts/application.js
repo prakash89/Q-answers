@@ -18,21 +18,13 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-        $("#commentLink1").click(function() {
-            $("#commentContainer1_"+$(this).data("id")).toggle();
-            // if ($("#commentContainer").is(":visible")) {
-                // $("#commentContainer").load($(this).attr("href"));
-            // } else {
-                // $("#commentContainer").html("Loading..."); //Or just leave it as is...
-            // }
-            return false; //Prevent default action
-        });
-    });
 
-$(function() {
-    $(".commentLink").click(function() {
-        $("#commentContainer_"+$(this).data("id")).toggle();
-        return false; //Prevent default action
-    });
+$(document).on("click","#commentLink1", function(e) {
+    e.preventDefault();
+    $("#commentContainer1_"+$(this).data("id")).toggle();
+});
+
+$(document).on("click",".commentLink", function(e) {
+    e.preventDefault();
+    $("#commentContainer_"+$(this).data("id")).toggle();
 });

@@ -1,3 +1,4 @@
+/*
 google.maps.event.addDomListener(window, 'load', init);
 
 var map;
@@ -67,7 +68,7 @@ function init() {
 			stylers: [
 			{ visibility: "off" }
 			]
-	/** /
+	
 		},{
 			featureType: "administrative.locality",
 			stylers: [
@@ -78,7 +79,7 @@ function init() {
 			stylers: [
 				{ visibility: "on" }
 			]
-			/**/
+			
 		},{
 			featureType: "water",
 			elementType: "labels",
@@ -114,3 +115,5 @@ function init() {
 		});
 	}
 }
+
+*/

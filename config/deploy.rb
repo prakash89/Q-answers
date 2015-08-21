@@ -1,6 +1,6 @@
 set :application, 'Q-answers'
 # set :repo_url, 'git@gitlab.qwinixtech.com:repositories/rails/inotary.git'
-set :repo_url, 'git@github.com:prakash89/Q-answers.git'
+set :repo_url, 'https://github.com/prakash89/Q-answers.git'
 set :scm, :git
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 

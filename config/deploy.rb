@@ -27,7 +27,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 set :keep_releases, 5
 
-before 'deploy:updated', 'deploy:copy_database_yml'
+# before 'deploy:updated', 'deploy:copy_database_yml'
 
 namespace :deploy do
 

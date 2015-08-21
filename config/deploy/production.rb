@@ -1,7 +1,7 @@
 set :stage, :production
 set :branch, :master
 set :rails_env, :production
-set :deploy_to, '/u01/apps/qwinix/'
+set :deploy_to, '/u01/apps/qwinix/q_answers'
 set :log_level, :debug
 
 role :app, %w{deploy@54.191.65.34}

@@ -11,7 +11,7 @@ before(:each) { apllication_signin }
 
 	scenario "user should create answer" do
 		question
-		visit "/categories/ruby"
+		visit "/categories/ruby" 
 		click_link "some text"
 		expect(page).to have_link("Share Your Answer")
 		click_link("Share Your Answer")

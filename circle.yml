@@ -1,0 +1,11 @@
+checkout:
+  post:
+    - cp config/database.yml.example config/database.yml
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle install --deployment --without development --path vendor/bundle
+      - bundle exec cap production deploy
+      - bundle exec cap production deploy:restart

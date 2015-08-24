@@ -35,8 +35,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-gem 'capistrano', group: :development
+gem 'capistrano-rails'
+gem 'capistrano'
 
 
 group :production do

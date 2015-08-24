@@ -30,9 +30,9 @@ set :deploy_to, '/u01/apps/qwinix/q_answers'
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@54.191.65.34}
-role :web, %w{deploy@54.191.65.34}
-role :db,  %w{deploy@54.191.65.34}
+role :app, %w{deploy@52.27.213.180}
+role :web, %w{deploy@52.27.213.180}
+role :db,  %w{deploy@52.27.213.180}
 
 # Extended Server Syntax
 # ======================
@@ -40,7 +40,7 @@ role :db,  %w{deploy@54.191.65.34}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '54.191.65.34', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server '52.27.213.180', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 # set :unicorn_rack_env, 'production'
 #setting up development branch for dev environment

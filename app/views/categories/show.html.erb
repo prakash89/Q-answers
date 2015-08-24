@@ -1,7 +1,7 @@
 <div class="container">
 	<h1><%= @category.titleize %> Questions</h1>
 	<div>
-		<a class="button ask-questions-position"
+		<a class="button ask-questions-position" href='#'
 		onClick="javascript:window.location='<%=new_question_path(category_id: @category)%>'"
 		>Ask Question</a>
 		<%= link_to "Home page", categories_path, class: "button back-button-position" %>

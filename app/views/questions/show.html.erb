@@ -2,13 +2,13 @@
 	<h1>View Question</h1>
 	<%= render :partial => "question_show" %>
 	<%#= link_to "Edit Question", edit_question_path(@question), class: "button" %>
-	<a class="button" onClick="javascript:window.location='<%=edit_question_path(@question)%>'"
+	<a class="button" href='#' onClick="javascript:window.location='<%=edit_question_path(@question)%>'"
 		>Edit Question</a>
 	<div class="questions-devider"></div>
 	<%= render :partial => "answer_show" %>
 	<div class=" post-btn-padding">
 		<%#= link_to "Share Your Answer", new_question_answer_path(question_id: @question.id), class: "button" %>
-		<a class="button"
+		<a class="button" href='#'
 		onClick="javascript:window.location='<%=new_question_answer_path(question_id: @question.id)%>'"
 		>Share Your Answer</a>
 	</div>

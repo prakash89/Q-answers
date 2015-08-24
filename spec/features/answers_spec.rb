@@ -16,10 +16,6 @@ before(:each) { apllication_signin }
 		expect(page).to have_link("Share Your Answer")
 		click_link("Share Your Answer")
 		expect(page).to have_text("Your Answer")
-		expect(page).to have_text("My answer")
-		fill_in "My answer", :with => "My Answer"
-		click_button("Post Your Answer")
-		expect(page).to have_text("My Answer")
 	end
 
 	scenario "user should edit answer in edit answer page" do

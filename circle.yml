@@ -1,6 +1,6 @@
 checkout:
   post:
-    - cp config/database.yml.example config/database.yml
+    # - cp config/database.yml.example config/database.yml
 
 deployment:
   production:

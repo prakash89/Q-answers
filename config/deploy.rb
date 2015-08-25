@@ -1,64 +1,47 @@
-set :application, 'Q-answers'
-# set :repo_url, 'git@gitlab.qwinixtech.com:repositories/rails/inotary.git'
+# config valid only for Capistrano 3.1
+set :application, 'q-answers'
 set :repo_url, 'https://github.com/prakash89/Q-answers.git'
-set :scm, :git
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+
 
 set :format, :pretty
 
-set :default_env, { :path => "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
-set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.0'
-#set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-#set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-
-set :bundle_gemfile, proc { release_path.join('Gemfile') }
-set :bundle_dir, proc  { shared_path.join('bundle') }
-set :bundle_flags, '--deployment --quiet'
-set :bundle_without, %w{development test}.join(' ')
-set :bundle_binstubs, proc  { shared_path.join('bin') }
-set :bundle_roles, :all
-set :bundle_bins, %w(gem rake rails)
-
-# set :pty, true
-
-# set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_files, %w{config/database.yml config/security.yml}
+
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :keep_releases, 5
 
-# before 'deploy:updated', 'deploy:copy_database_yml'
+set :bundle_gemfile, -> { release_path.join('Gemfile') }
+set :bundle_dir, -> { shared_path.join('bundle') }
+set :bundle_flags, '--deployment --quiet'
+set :bundle_without, %w{development test}.join(' ')
+set :bundle_binstubs, -> { shared_path.join('bin') }
+set :bundle_roles, :all
+set :bundle_bins, %w(gem rake rails)
+set :whenever_roles, :all
+
 
 namespace :deploy do
 
-  # desc "Copy database.yml.example"
-  # task :copy_database_yml do
-  #   on roles(:app) do
-  #     execute "mkdir -p #{shared_path}/config"
-  #     execute "cp -f #{release_path}/config/database.yml.example #{shared_path}/config/database.yml"
-  #     execute "rm -f #{release_path}/config/database.yml"
-  #     execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  #     execute "rm -f #{release_path}/config/database.yml.example"
-  #   end
-  # end
-
   desc 'Restart application'
   task :restart do
-    on roles(:app), :in => :sequence, :wait => 5 do
+    on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
+      puts "RESTARTED SUCCESSFULLY"
     end
   end
 
+  after :publishing, :restart
+
   after :restart, :clear_cache do
-    on roles(:web), :in => :groups, :limit => 3, :wait => 10 do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
     end
   end
-
-  after :finishing, 'deploy:cleanup'
 
 end

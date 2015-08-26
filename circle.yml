@@ -4,7 +4,7 @@ checkout:
 
 deployment:
   production:
-    branch: master
+    branch: master 
     commands:
       - bundle install --deployment --without development --path vendor/bundle
       - bundle exec cap production deploy
